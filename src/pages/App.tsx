@@ -1,11 +1,11 @@
 import React from 'react';
-import { Login } from '../components/Login';
+import { Signup } from '../components/Signup';
 import './styles.css';
 
 function App() {
   return (
-    <div className='modalLogin'>
-      <Login />
+    <div className='modalSignup'>
+      <Signup />
     </div>
   );
 }
