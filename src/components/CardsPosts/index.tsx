@@ -18,7 +18,7 @@ export const CardsPosts = (props: PostProps) => {
         <h1>{props.title}</h1>
       </div>
       <div className='userAndTime'>
-        <h4 className='userNameH4'>{props.username}</h4>
+        <h4 className='userNameH4'>@{props.username}</h4>
         <h4 className='timePostsH4'>{formatedDate}</h4>
       </div>
       <br />
