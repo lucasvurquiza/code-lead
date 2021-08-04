@@ -56,3 +56,9 @@
   color: #000000;
   border: 0.063rem solid #000000;
 }  
+
+.divSignup button:disabled {
+  background-color: #777777;
+  color: #FFF;
+  border: 0.063rem solid #000000;
+} 

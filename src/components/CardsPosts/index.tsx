@@ -10,7 +10,7 @@ export type PostProps = {
 };
 
 export const CardsPosts = (props: PostProps) => {
-  var formatedDate = moment(props.created_datetime, moment.ISO_8601).format('DD/MM/YYYY');
+  var formatedDate = moment(props.created_datetime, moment.ISO_8601).format('MMMM Do YYYY, h:mm:ss a');
 
   return (
     <div className='cardPosts'>
