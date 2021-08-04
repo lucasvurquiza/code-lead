@@ -1,46 +1,77 @@
-# Getting Started with Create React App
+# CodeLeap - Post API CRUD :memo:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Este projeto foi desenvolvido utilizando:
 
-## Available Scripts
+* ### [ReactJS](https://pt-br.reactjs.org/)
 
-In the project directory, you can run:
+* ### [TypeScript](https://www.typescriptlang.org/)
 
-### `yarn start`
+* ### [Axios](https://axios-http.com/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* ### [ContextAPI](https://pt-br.reactjs.org/docs/context.html)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* ### [Hooks](https://pt-br.reactjs.org/docs/hooks-overview.html)  
 
-### `yarn test`
+* ### [Moment.js](https://momentjs.com/)  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* ### [React Router](https://reactrouter.com/web/guides/quick-start)  
 
-### `yarn build`
+## Tutorial de Execução
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Para instalação de dependências execute:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### `yarn`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Para executar o projeto use:
 
-### `yarn eject`
+#### `yarn dev`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Para interromper a execução:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### `CTRL+C` Para Linux e Windows
+#### `Command+C` Para MacOS  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Onde me encontrar:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* ##### [LinkedIn](https://www.linkedin.com/in/lucas-vieira-urquiza)
 
-## Learn More
+* ##### [GitHub](https://github.com/lucasvurquiza)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* ##### [Instagram](https://www.instagram.com/lucas_urquiza)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* ##### [Gmail](mailto:urquizaxd@gmail.com)
+
+* ##### [Outlook](mailto:lucasuvie@hotmail.com)
+
+* ##### [WhatsApp](https://api.whatsapp.com/send?phone=5562996559459)
+
+
+### Prints da Aplicação
+
+#### Tela de Signup
+
+<img src="img/Signup.png" alt="Tela de Signup" style="zoom:70%; border-radius: 10px;" />
+
+
+
+#### Tela de Create Post
+
+<img src="img/CreatePost.png" alt="Tela de Create Post" style="zoom:70%; border-radius: 10px;" />
+
+
+
+#### Tela de List Post
+
+<img src="img/ListPost.png" alt="Tela de List Post" style="zoom:70%; border-radius: 10px;" />
+
+
+
+#### Tela de Delete Post
+
+<img src="img/DeletePost.png" alt="Tela de Delete Post" style="zoom:70%; border-radius: 10px;" />
+
+
+
+#### Tela de Edit Post
+
+<img src="img/EditPost.png" alt="Tela de Edit Post" style="zoom:70%; border-radius: 10px;" />
