@@ -57,7 +57,11 @@ export const ModalForm = ({titleModal, labelButton, idEdit, titleEdit, contentEd
           placeholder='Content here' 
           value={content || ''}
           onChange={(e) => setContent(e.target.value)}/>
-        <button onClick={handleSubmit}>{labelButton}</button>
+        <button 
+          disabled={(!title.trim() || !content.trim()) ? true : false}  
+          onClick={handleSubmit}>
+            {labelButton}
+        </button>
         {children}
     </div>
   );
