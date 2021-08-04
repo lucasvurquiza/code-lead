@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import GetListPost from '../../actions/GetListPost';
+import Post from '../../actions/Post';
 import { CardsPosts, PostProps } from '../../components/CardsPosts';
 import { ModalForm } from '../../components/ModalForm';
 import { Navbar } from '../../components/Navbar';
@@ -11,7 +11,7 @@ export const MainPage = () => {
   const [listOfPost, setListOfPost] = useState<PostProps[]>([]);
 
   const fetchAllPosts = async () => {
-    const response = await GetListPost.getListPost();
+    const response = await Post.getListPost();
     setListOfPost(response);
   };
 
@@ -30,6 +30,7 @@ export const MainPage = () => {
         <div className='modalPost'>
           <CardsPosts 
             key={post.id} 
+            id={post.id}
             title={post.title} 
             content={post.content} 
             username={post.username} 

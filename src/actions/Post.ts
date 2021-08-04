@@ -1,4 +1,4 @@
-import { api } from '../services/axios';
+import { api, source } from '../services/axios';
 
 type PostType = {
   userName: string;
@@ -24,6 +24,29 @@ class Post {
       console.log(error);
       return null;
     })
+  }
+
+  async getListPost() {
+    return api.get('/careers/', {
+      cancelToken: source.token,
+    })
+    .then(async response => {
+      return response.data.results;
+    })
+    .catch((error) => {
+      console.log(error);
+      return null;
+    })
+  }
+
+  async deletePost(idPost: number) {
+    return api.delete(`/careers/${idPost}/`, {})
+      .then(async () => {
+        console.log('Apagado com sucesso');
+      })
+      .catch(() => {
+        return null;
+      });
   }
 }
 
