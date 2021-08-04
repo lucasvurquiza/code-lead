@@ -48,6 +48,19 @@ class Post {
         return null;
       });
   }
+
+  async editPost(idPost: number, title: string, content: string) {
+    api.patch(`/careers/${idPost}/`,{
+      title,
+      content,
+    })
+    .then(async () => {
+      console.log('Editado com sucesso');
+    })
+    .catch(() => {
+      return null;
+    });
+  }
 }
 
 export default new Post();

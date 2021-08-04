@@ -2,8 +2,10 @@ import React, { useContext, useState } from 'react';
 import moment from 'moment';
 import './styles.css';
 import deleteIcon from '../../assets/delete.png';
+import editIcon from '../../assets/edit.png';
 import { ApplicationContext } from '../../context/Application/ApplicationContext';
 import { PopupDelete } from '../PopupDelete';
+import { PopupEdit } from '../PopupEdit';
 
 export type PostProps = {
   id: number;
@@ -17,6 +19,7 @@ export const CardsPosts = (props: PostProps) => {
   var formatedDate = moment(props.created_datetime, moment.ISO_8601).format('MMMM Do YYYY, h:mm:ss a');
   const {userName} = useContext(ApplicationContext);
   const [openPopupDelete, setOpenPopupDelete] = useState(false);
+  const [openPopupEdit, setOpenPopupEdit] = useState(false);
 
   return (
     <>
@@ -24,14 +27,24 @@ export const CardsPosts = (props: PostProps) => {
         <div className='titleCard'>
           <h1 className='titlePost'>{props.title}</h1>
           {userName === props.username ? 
-            (<button 
+            (<>
+              <button 
+                  className='deleteButton'
+                  onClick={() => setOpenPopupDelete(true)}>
+                    <img 
+                      className='imgDelete' 
+                      src={deleteIcon} 
+                      alt='delete'/>
+                </button>
+                <button 
                 className='deleteButton'
-                onClick={() => setOpenPopupDelete(true)}>
+                onClick={() => setOpenPopupEdit(true)}>
                   <img 
                     className='imgDelete' 
-                    src={deleteIcon} 
-                    alt='delete'/>
-              </button>)
+                    src={editIcon} 
+                    alt='edit'/>
+              </button>
+            </>)
           : null
           }
           </div>
@@ -45,6 +58,7 @@ export const CardsPosts = (props: PostProps) => {
         </div>
       </div>
       <PopupDelete idPostDelete={props.id} trigger={openPopupDelete} setTrigger={setOpenPopupDelete}/>
+      <PopupEdit id={props.id} title={props.title} content={props.content} trigger={openPopupEdit} setTrigger={setOpenPopupEdit}/>
     </>
   );
 };

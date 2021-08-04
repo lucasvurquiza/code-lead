@@ -7,32 +7,43 @@ import './styles.css';
 type PropsType = {
   titleModal: string;
   labelButton: string;
+  idEdit?: number;
+  titleEdit?: string;
+  contentEdit?: string;
+  children?: React.ReactNode;
 }
 
-export const ModalForm = (props: PropsType) => {
+export const ModalForm = ({titleModal, labelButton, idEdit, titleEdit, contentEdit, children}: PropsType) => {
   const {userName, setCallFetch, callFetch} = useContext(ApplicationContext);
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [idPost, setIdPost] = useState(idEdit ? idEdit : 0);
+  const [title, setTitle] = useState(titleEdit ? titleEdit : '');
+  const [content, setContent] = useState(contentEdit ? contentEdit : '');
 
   const clearForm = () => {
+    setIdPost(0);
     setTitle('');
     setContent('');
   };
 
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
-    await Post.createPost({
-      userName,
-      title,
-      content,
-    });
+    if(idPost !== 0) {
+      await Post.editPost(idPost, title, content);
+    } else {
+      await Post.createPost({
+        userName,
+        title,
+        content,
+      });
+    }
+
     setCallFetch(!callFetch);
     clearForm();
   };
 
   return (
     <div className='createPost'>
-        <h1>{props.titleModal}</h1>
+        <h1>{titleModal}</h1>
         <h3 className='h3First'>Title</h3>
         <input 
           type="text" 
@@ -46,7 +57,8 @@ export const ModalForm = (props: PropsType) => {
           placeholder='Content here' 
           value={content || ''}
           onChange={(e) => setContent(e.target.value)}/>
-        <button onClick={handleSubmit}>{props.labelButton}</button>
+        <button onClick={handleSubmit}>{labelButton}</button>
+        {children}
     </div>
   );
 };
